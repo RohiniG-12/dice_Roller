@@ -7,6 +7,7 @@
         body{
             display: block;
             text-align: center;
+            background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
         }
         .dice-roller{
             height: 300px;
@@ -26,8 +27,40 @@
 </head>
 <body>
     <h1 class="heading">Roll the Dice</h1>
-    <img src="dice.png" alt="" class="dice-roller">
-    <button class="btn-dice">Roll Dice</button>
-    
+    <img src="dice.png" alt="dice" class="dice-roller" id="dice-img">
+    <button class="btn-dice" onclick="roll()">Roll Dice</button>
+ <script>
+    function roll()
+    {
+        const min=1;
+        const max=6;
+        const randomNumber=Math.round(Math.random()*(max-min)+min);
+
+       const imgElement=document.getElementById('dice-img');
+
+       switch(randomNumber){
+        case 1:
+           imgElement.src="dice (1).png";
+           break; 
+           case 2:
+           imgElement.src="dice (2).png";
+           break; 
+           case 3:
+           imgElement.src="dice (3).png";
+           break; 
+           case 4:
+           imgElement.src="dice (4).png";
+           break; 
+           case 5:
+           imgElement.src="dice (5).png";
+           break; 
+           case 6:
+           imgElement.src="dice (6).png";
+           break; 
+           default:
+            imgElement.src='default.png';
+       }
+    }
+</script>
 </body>
 </html>
